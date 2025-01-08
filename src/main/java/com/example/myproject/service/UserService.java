@@ -4,16 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.myproject.repository.UserRepository;
-import com.example.myproject.entity.User;
+import com.example.myproject.entity.Member;
 @Service
 public class UserService
 {
     @Autowired
     private UserRepository userRepository;
 
-    public User registerUser(User user)
+    public Member registerUser(Member user)
     {
-        if(userRepository.FindByUserName(user.getUsername()) !=null)
+        if(userRepository.findByMembername(user.getMembername()) !=null)
         {
             throw new IllegalArgumentException("username already exists");
         }

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.myproject.entity.User;
+import com.example.myproject.entity.Member;
 import com.example.myproject.service.UserService;
 
 @RestController
@@ -15,9 +15,9 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@RequestBody User user) {
+    public ResponseEntity<Member> registerUser(@RequestBody Member user) {
         try {
-            User newUser = userService.registerUser(user);
+            Member newUser = userService.registerUser(user);
             return ResponseEntity.ok(newUser);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(null);

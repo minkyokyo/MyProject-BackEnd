@@ -4,15 +4,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-public class User {
+@Table
+public class Member {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    private String membername;
     private String password;
     private String email;
 
@@ -25,12 +27,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getMembername() {
+        return membername;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setMembername(String username) {
+        this.membername = username;
     }
 
     public String getPassword() {
